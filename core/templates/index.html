@@ -1,0 +1,21 @@
+{% load bootstrap5 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FMS - 5.0</title>
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+</head>
+<body>
+
+    <div class="container img-fluid block">
+        <img class="senai-logo" src="{% static 'images/logo_senai.png' %}" alt="">
+        <h1>FMS 5.0</h1>
+    </div>
+
+    {% bootstrap_javascript %}
+</body>
+</html>
