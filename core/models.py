@@ -36,10 +36,11 @@ class Color(Base):
     
 class Order(Base):
     requester = models.ForeignKey(User, on_delete=models.SET('unknown'))
+    machine = models.ForeignKey(Machine, on_delete=models.SET('unknown'))
     personalization = models.IntegerField()
     color = models.ForeignKey(Color, on_delete=models.SET('unknown'))
     STAGE_CHOICE = (('required','Required'), ('production','Production'), ('finished','Finished'))
-    stage = models.CharField(max_length=15, choices=STAGE_CHOICE)
+    stage = models.CharField(max_length=15, choices=STAGE_CHOICE, default=STAGE_CHOICE[0])
     finished = models.DateTimeField(blank=True, null=True)
 
     class Meta:
@@ -52,4 +53,13 @@ class Order(Base):
     def save(self, *args, **kwargs):
         if not self.active and not self.finished:
             self.finished = timezone.now()
+            self.stage = 'finished'
+
+        if self.stage == 'finished':
+            self.active = False
+            self.finished = timezone.now()
+        else:
+            self.active = True
+            self.finished = None
+
         super(Order, self).save(*args, **kwargs) 
