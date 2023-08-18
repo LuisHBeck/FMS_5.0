@@ -39,7 +39,7 @@ class Order(Base):
     machine = models.ForeignKey(Machine, on_delete=models.SET('unknown'))
     personalization = models.IntegerField()
     color = models.ForeignKey(Color, on_delete=models.SET('unknown'))
-    STAGE_CHOICE = (('required','Required'), ('production','Production'), ('finished','Finished'))
+    STAGE_CHOICE = (('Required','Required'), ('Production','Production'), ('Finished','Finished'))
     stage = models.CharField(max_length=15, choices=STAGE_CHOICE, default=STAGE_CHOICE[0])
     finished = models.DateTimeField(blank=True, null=True)
 

@@ -21,7 +21,7 @@
                 {% for request in demand %}
                     <tr>
                         <td>{{ request.id }}</td>
-                        <td>{{ request.requester }}</td>
+                        <td>{{ request.requester.first_name }}</td>
                         <td>{{ request.machine }}</td>
                         <td>{{ request.personalization }}</td>
                         <td>{{ request.color }}</td>

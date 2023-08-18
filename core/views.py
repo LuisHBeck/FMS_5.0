@@ -1,6 +1,7 @@
 from django.views.generic import TemplateView, FormView
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.shortcuts import redirect
 
 from .models import Order
 from .forms import OrderModelForm
@@ -15,14 +16,12 @@ class OrderView(FormView):
     form_class = OrderModelForm
     success_url = reverse_lazy('order')
 
-
     def form_valid(self, form):
         instance = form.save(commit=False)
-        instance.requester = self.request.user
+        instance.requester = self.request.user.get_full_name()
         instance.save()
         messages.success(self.request, 'Saved successfully')
         return super().form_valid(form)
-
     
     def form_invalid(self, form, *args, **kwargs):
         messages.error(self.request, 'Error saving')
