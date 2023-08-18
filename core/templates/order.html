@@ -3,7 +3,8 @@
 {% load bootstrap5 %}
 
 {% block content %}
-    <div class="conatiner">
+    {% include 'navbar.html' %}
+    <div class="conatiner div-margin">
         <h1>Order</h1>
         {% bootstrap_messages %}
         <form action="{% url 'order' %}" method="post" class="form">

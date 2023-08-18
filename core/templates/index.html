@@ -3,8 +3,9 @@
 {% load bootstrap5 %}
 
 {% block content %}
-    <div class="container img-fluid block">
+    {% include 'navbar.html' %}
+    {% comment %} <div class="container img-fluid block">
         <img class="senai-logo" src="{% static 'images/logo_senai.png' %}" alt="">
         <h1>FMS 5.0</h1>
-    </div>
+    </div> {% endcomment %}
 {% endblock  %}
