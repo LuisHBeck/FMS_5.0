@@ -1,0 +1,11 @@
+{% load static %}
+
+<form method="get" action="{% url 'demand' %}">
+    <label for="filter">Filter by: </label>
+    <select class="form-select" name="filter" id="filter">
+        <option value="" selected>None</option>
+        <option value="1">Torno</option>
+        <option value="2">Fresa</option>
+    </select>
+    <button class="btn btn-primary" type="submit">Filter</button>
+</form>
