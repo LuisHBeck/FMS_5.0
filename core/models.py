@@ -53,9 +53,9 @@ class Order(Base):
     def save(self, *args, **kwargs):
         if not self.active and not self.finished:
             self.finished = timezone.now()
-            self.stage = 'finished'
+            self.stage = 'Finished'
 
-        if self.stage == 'finished':
+        if self.stage == 'Finished':
             self.active = False
             self.finished = timezone.now()
         else:
