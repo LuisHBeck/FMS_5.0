@@ -14,10 +14,11 @@
 <body>
     <div class="conatiner">
         <h1>Order</h1>
+        {% bootstrap_messages %}
         <form action="{% url 'order' %}" method="post" class="form">
             {% csrf_token %}
 
-            {% bootstrap_form Order %}
+            {% bootstrap_form form %}
 
             {% buttons %}
                 <button type="submit" class="btn btn-primary">Send order</button>
