@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+
+{% block content %}
+    <div class="container">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Requester</th>
+                <th scope="col">Machine</th>
+                <th scope="col">Personalization</th>
+                <th scope="col">Color</th>
+                <th scope="col">Stage</th>
+                <th scope="col">Finished</th>
+              </tr>
+            </thead>
+
+            <tbody>
+                {% for request in demand %}
+                    <tr>
+                        <td>{{ request.id }}</td>
+                        <td>{{ request.requester }}</td>
+                        <td>{{ request.machine }}</td>
+                        <td>{{ request.personalization }}</td>
+                        <td>{{ request.color }}</td>
+                        <td>{{ request.stage }}</td>
+                        <td>{{ request.finished }}</td>
+                    </tr>
+                {% endfor %}
+              
+            </tbody>
+          </table>
+    </div>
+{% endblock  %}

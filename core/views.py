@@ -1,9 +1,8 @@
-from django.http import HttpResponse
 from django.views.generic import TemplateView, FormView
 from django.urls import reverse_lazy
 from django.contrib import messages
-from django.contrib.auth.models import User
 
+from .models import Order
 from .forms import OrderModelForm
 
 
@@ -28,3 +27,12 @@ class OrderView(FormView):
     def form_invalid(self, form, *args, **kwargs):
         messages.error(self.request, 'Error saving')
         return super(OrderView, self).form_valid(form, *args, **kwargs)
+    
+
+class DemandView(TemplateView):
+    template_name = 'demand.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(DemandView, self).get_context_data(**kwargs)
+        context['demand'] = Order.objects.all()
+        return context
