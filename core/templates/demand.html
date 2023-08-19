@@ -3,7 +3,6 @@
 {% load bootstrap5 %}
 
 {% block content %}
-    {% include 'navbar.html' %}
     <div class="container div-margin">
 
       {% include 'filter.html' %}
@@ -18,6 +17,7 @@
                 <th scope="col">Color</th>
                 <th scope="col">Stage</th>
                 <th scope="col">Finished</th>
+                <th scope="col">Edit</th>
               </tr>
             </thead>
 
@@ -31,10 +31,11 @@
                         <td>{{ request.color }}</td>
                         <td>{{ request.stage }}</td>
                         <td>{{ request.finished }}</td>
+                        <td><a href="{% url 'order_edit' pk=request.id %}"> {% include 'edit_icon.html' %} </a></td>
                     </tr>
                 {% endfor %}
-              
             </tbody>
           </table>
+          
     </div>
 {% endblock  %}

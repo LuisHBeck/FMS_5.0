@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'style/style.css' %}">
 </head>
 <body>
+    {% include 'navbar.html' %}
     {% block content %}{% endblock  %}
     {% bootstrap_javascript %}
 </body>
