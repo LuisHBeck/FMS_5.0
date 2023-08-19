@@ -4,7 +4,7 @@
 
 {% block content %}
     <div class="conatiner div-margin">
-        <h1>Order</h1>
+        <h1>New Order</h1>
         {% bootstrap_messages %}
         <form action="{% url 'order' %}" method="post" class="form">
             {% csrf_token %}

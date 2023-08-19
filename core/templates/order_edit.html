@@ -4,7 +4,7 @@
 
 {% block content %}
     <div class="caontainer div-margin">
-        <h1>Edit Order</h1>
+        <h1>Edit Order #{{ order_id }}</h1>
         {% bootstrap_messages %}
         <form action="{% url 'order_edit' pk=order_id %}" method="post" class="form">
             {% csrf_token %}

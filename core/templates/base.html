@@ -9,9 +9,18 @@
     {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'style/style.css' %}">
 </head>
-<body>
+<body class="body-container">
+    <a href="{% url 'index' %}">
+        <img src="{% static 'images/senai_fms_logo.png' %}" alt="" width="180" height="40" class="overlay-image">
+    </a>
+    
     {% include 'navbar.html' %}
-    {% block content %}{% endblock  %}
+    <main class="container">
+        {% block content %}{% endblock  %}
+    </main>
+    
+    {% include 'footer.html' %}
+
     {% bootstrap_javascript %}
 </body>
 </html>

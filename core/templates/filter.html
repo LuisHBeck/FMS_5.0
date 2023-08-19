@@ -1,8 +1,9 @@
 {% load static %}
+{% load bootstrap5 %}
 
-<form method="get" action="{% url 'demand' %}">
-    <label for="filter">Filter by: </label>
-    <select class="form-select" name="filter" id="filter">
+<label for="filter"> Filter by: </label>
+<form class="filter-form" method="get" action="{% url 'demand' %}">
+    <select class="form-select select-field" name="filter" id="filter">
         <option value="" selected>None</option>
         <option value="1">Torno</option>
         <option value="2">Fresa</option>

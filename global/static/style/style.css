@@ -1,3 +1,28 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;           
+    padding: 0;          
+    background-color: #ffffff;      
+    color: #333333;       
+    line-height: 1.6;    
+    background-color: rgba(0, 0, 0, 0.37); 
+}
+
+.body-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 100vh;
+    
+}
+
+.body-container main{
+    flex: 1;
+    background: transparent;
+    border: 0;
+}
+
 .div-margin {
     margin: 25px;
 }
@@ -8,4 +33,37 @@
 
 .block{
     display: block;
+}
+
+.overlay-image {
+    position: fixed;
+    top: 8px;
+    left: 15px;
+    /* width: 1%; */
+    z-index: 1; /* Coloca a imagem por trás da navbar */
+    
+}
+
+.footer {
+    /* position: absolute; */
+    bottom: 0;
+    width: 100%;
+    padding: 5px;
+}
+
+.light-text{
+    color: white;
+}
+
+.select-field {
+    width: 300px; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    margin-right: 10px;
+}
+
+.filter-form {
+    display: flex;
+    align-items: center;
 }
