@@ -2,7 +2,6 @@ from django.views.generic import TemplateView, FormView, UpdateView
 from django.urls import reverse_lazy, reverse
 from django.contrib import messages
 from django.contrib.auth.mixins import UserPassesTestMixin
-from django.shortcuts import get_object_or_404
 
 from .models import Order
 from .forms import OrderModelForm
@@ -76,3 +75,7 @@ class OrderEditView(UserPassesTestMixin, UpdateView):
     
     def test_func(self):
         return self.request.user.is_authenticated
+    
+
+# class AccountView(TemplateView):
+#     template_name = 'account.html'
