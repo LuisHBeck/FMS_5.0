@@ -15,7 +15,7 @@ class OrderView(UserPassesTestMixin, FormView):
     template_name = 'order.html'
     form_class = OrderModelForm
     success_url = reverse_lazy('order')
-    login_url = reverse_lazy('admin:index')
+    login_url = reverse_lazy('index')
 
     def form_valid(self, form):
         instance = form.save(commit=False)
@@ -34,7 +34,7 @@ class OrderView(UserPassesTestMixin, FormView):
 
 class DemandView(UserPassesTestMixin, TemplateView):
     template_name = 'demand.html'
-    login_url = reverse_lazy('admin:index')
+    login_url = reverse_lazy('index')
 
     def get_context_data(self, **kwargs):
         context = super(DemandView, self).get_context_data(**kwargs)
@@ -54,7 +54,7 @@ class DemandView(UserPassesTestMixin, TemplateView):
 class OrderEditView(UserPassesTestMixin, UpdateView):
     template_name = 'order_edit.html'
     form_class = OrderModelForm
-    login_url = ('admin:index')
+    login_url = ('index')
     model = Order
 
     def get_success_url(self):
