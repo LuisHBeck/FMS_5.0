@@ -36,8 +36,8 @@ body {
 }
 
 .overlay-image {
-    position: fixed;
-    top: 8px;
+    position: absolute;
+    top: 10px;
     left: 15px;
     /* width: 1%; */
     z-index: 1; /* Coloca a imagem por trás da navbar */
