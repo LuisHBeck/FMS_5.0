@@ -21,8 +21,23 @@
               </tr>
             </thead>
 
-            <tbody>
+            {% comment %} <tbody>
                 {% for request in demand %}
+                    <tr>
+                        <td>{{ request.id }}</td>
+                        <td>{{ request.requester.first_name }}</td>
+                        <td>{{ request.machine }}</td>
+                        <td>{{ request.personalization }}</td>
+                        <td>{{ request.color }}</td>
+                        <td>{{ request.stage }}</td>
+                        <td>{{ request.finished }}</td>
+                        <td><a href="{% url 'order_edit' pk=request.id %}"> {% include 'edit_icon.html' %} </a></td>
+                    </tr>
+                {% endfor %}
+            </tbody> {% endcomment %}
+
+            <tbody>
+                {% for request in page_obj.object_list %}
                     <tr>
                         <td>{{ request.id }}</td>
                         <td>{{ request.requester.first_name }}</td>
@@ -36,6 +51,8 @@
                 {% endfor %}
             </tbody>
           </table>
+
+          {% include 'pagination.html' %}
           
     </div>
 {% endblock  %}

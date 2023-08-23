@@ -2,6 +2,7 @@ from django.views.generic import TemplateView, FormView, UpdateView
 from django.urls import reverse_lazy, reverse
 from django.contrib import messages
 from django.contrib.auth.mixins import UserPassesTestMixin
+from django.core.paginator import Paginator
 
 from .models import Order
 from .forms import OrderModelForm
@@ -39,12 +40,20 @@ class DemandView(UserPassesTestMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super(DemandView, self).get_context_data(**kwargs)
         queryset = Order.objects.all()
-        selected_filter = self.request.GET.get('filter', None)
+        selected_filter = self.request.GET.get('filter', None)    
         
+        # FILTER
         if selected_filter:
             queryset = queryset.filter(machine=selected_filter)
-        
+            
         context['demand'] = queryset
+        
+        # PAGINATION
+        paginator = Paginator(queryset, 10)
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        context['page_obj'] = page_obj
+        
         return context
     
     def test_func(self):
