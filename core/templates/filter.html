@@ -1,12 +1,12 @@
 {% load static %}
 {% load bootstrap5 %}
 
-<label for="filter"> Filter by: </label>
-<form class="filter-form" method="get" action="{% url 'demand' %}">
+<label for="filter"> Filtrar por: </label>
+<form class="filter-form mb-3" method="get" action="{% url 'demand' %}">
     <select class="form-select select-field" name="filter" id="filter">
-        <option value="" selected>None</option>
+        <option value="" selected>Nenhum</option>
         <option value="1">Torno</option>
         <option value="2">Fresa</option>
     </select>
-    <button class="btn btn-primary" type="submit">Filter</button>
+    <button class="btn btn-danger" type="submit">Filtrar</button>
 </form>

@@ -1,84 +1,134 @@
 body {
-    height: 100%;
-    width: 100%;
-    margin: 0;           
-    padding: 0;          
-    background-color: #ffffff;      
-    color: #333333;       
-    line-height: 1.6;    
-    background-color: rgba(0, 0, 0, 0.37); 
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #ffffff;
+	color: #333333;
+	line-height: 1.6;
+	background-color: #ced0d6;
 }
 
 .body-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    min-width: 100vh;
-    
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	min-width: 100vh;
 }
 
-.body-container main{
-    flex: 1;
-    background: transparent;
-    border: 0;
+.body-container main {
+	background: transparent;
+	border: 0;
+	margin: auto;
+}
+
+.form-signin {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	scale: 160%;
 }
 
 .div-margin {
-    margin: 25px;
+	margin: 25px;
+	scale: 130%;
 }
 
 .senai-logo {
-    height: 100px;
-}
-
-.block{
-    display: block;
+	height: 100px;
 }
 
 .overlay-image {
-    position: absolute;
-    top: 10px;
-    left: 15px;
-    /* width: 1%; */
-    z-index: 1; /* Coloca a imagem por trás da navbar */
-    
+	width: 200px;
 }
 
 .footer {
-    /* position: absolute; */
-    bottom: 0;
-    width: 100%;
-    padding: 5px;
+	/* position: absolute; */
+	bottom: 0;
+	width: 100%;
+	padding: 5px;
 }
 
-.light-text{
-    color: white;
+.light-text {
+	color: white;
 }
 
 .select-field {
-    width: 300px; 
-    padding: 10px; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    margin-right: 10px;
+	width: 300px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-right: 10px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
 .filter-form {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .input-width {
-    width: 300px;
+	width: 300px;
+}
+
+.bartxt {
+	display: inline-block;
+  position: relative;
+}
+
+.bartxt::after {
+	content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #e30613;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.bartxt:hover::after {
+	transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .block {
-    display: block;
+	display: flex;
+	flex-direction: column;
+	scale: 160%;
+}
+
+.form-control:focus {
+	border-color: #e30613 !important;
+	box-shadow: 0 0 0 0.1rem #ce333dc2 !important;
+}
+
+.form-select:focus {
+	border-color: #e30613 !important;
+	box-shadow: 0 0 0 0.1rem #ce333dc2 !important;
+}
+
+.container {
+	margin: auto;
+}
+
+@media (max-width: 992px) {
+	.div-margin {
+		scale: 100%;
+	}
+}
+@media (min-width: 992px) and (max-width: 1650px) {
+	.div-margin {
+		scale: 110%;
+	}
 }
