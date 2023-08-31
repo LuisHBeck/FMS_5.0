@@ -5,15 +5,19 @@
         <form action="" class="form-signin" method="post" autocomplete="off">
             {% csrf_token %}
             {% comment %} <img src="{% static 'images/senai_fms_logo.png' %}" class="mb-4" alt="" width="72" height"72"> {% endcomment %}
-            <h1 class="h3 mb-3 font-weight-normal">Inform your data</h1>
+            <h1 class="font-weight-normal m-auto mb-0 ">Login</h1>
+
+            <div>
+                <label for="username" class="sr-only">Usuário</label>
+                <input type="text" name="username" id="username" class="form-control input-width" placeholder="Usuário" required autofocus>
+            </div>
+            
+            <div>
+                <label for="password" class="sr-only">Senha</label>
+                <input type="password" id="password" name="password" class="form-control input-width" placeholder="Senha" required>
+            </div>
     
-            <label for="username" class="sr-only">User</label>
-            <input type="text" name="username" id="username" class="form-control input-width" placeholder="UserName" required autofocus>
-    
-            <label for="password" class="sr-only">Password</label>
-            <input type="password" id="password" name="password" class="form-control input-width" placeholder="Password" required>
-    
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Acces</button>
+            <button class="btn btn-lg btn-danger btn-block " type="submit">Acessar</button>
         </form>
     </div>
 {% endblock  %}

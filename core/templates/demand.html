@@ -7,17 +7,17 @@
 
       {% include 'filter.html' %}
       
-        <table class="table table-dark table-hover">
+        <table class="table table-light table-hover">
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Requester</th>
-                <th scope="col">Machine</th>
-                <th scope="col">Personalization</th>
-                <th scope="col">Color</th>
-                <th scope="col">Stage</th>
-                <th scope="col">Finished</th>
-                <th scope="col">Edit</th>
+                <th scope="col">Solicitante</th>
+                <th scope="col">Máquina</th>
+                <th scope="col">Personalização</th>
+                <th scope="col">Cor</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Finalizado</th>
+                <th scope="col">Editar</th>
               </tr>
             </thead>
 
@@ -32,7 +32,7 @@
                         <td>{{ request.color }}</td>
                         <td>{{ request.stage }}</td>
                         <td>{{ request.finished }}</td>
-                        <td><a href="{% url 'order_edit' pk=request.id %}"> {% include 'edit_icon.html' %} </a></td>
+                        <td><a href="{% url 'order_edit' pk=request.id %}" class="text-danger" > {% include 'edit_icon.html' %} </a></td>
                     </tr>
                 {% endfor %}
             </tbody>
